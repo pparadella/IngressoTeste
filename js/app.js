@@ -1,7 +1,7 @@
-var initialMovies;
+var initialMovies = [];
 $.ajax({
   url:
-    "https://demo7856830.mockable.io/?fbclid=IwAR2rWVWFJUkbZ2i3VbirbcfhcBj57kuOB2G7olMCH7_NGlKDqF1aVOCqqhs",
+    "https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home",
   type: "GET",
   async:false,
 	dataType: "json",
@@ -9,7 +9,23 @@ $.ajax({
     accept: "application/jsonp;odata=verbose"
   },
   success: function(data) {
-    initialMovies = data;
+    initialMovies.push(data);
+  },
+  error: function(data) {
+    console.log(data);
+  }
+});
+$.ajax({
+  url:
+    "https://api-content.ingresso.com/v0/templates/highlights/2/partnership/home",
+  type: "GET",
+  async:false,
+	dataType: "json",
+  headers: {
+    accept: "application/jsonp;odata=verbose"
+  },
+  success: function(data) {
+    initialMovies.push(data);
   },
   error: function(data) {
     console.log(data);
@@ -82,8 +98,8 @@ var ViewModel = function (){
   var self = this;
 
   this.movies = ko.observableArray([]);
-
-  initialMovies.forEach(function(movieItem){
+  
+  initialMovies[0].forEach(function(movieItem){
     self.movies.push(new Movie(movieItem));
   });
 
