@@ -35,6 +35,15 @@ function closePopUp (){
   $('.popUp').css('display','none');
   $('.popUp article iframe').attr('src','');
 }
+function toggleChangeCity (){
+  var elem = document.getElementsByClassName('changeCity')
+  if (elem[0].style.display == ""){
+    elem[0].style.display = "block"
+  }else{
+    elem[0].style.display = ""
+  }
+}
+
 function searchMovie (){
   var input, filter, main, article, a, i, txtValue;
     input = document.getElementById("search");
@@ -97,11 +106,33 @@ var Movie = function (data){
 var ViewModel = function (){
   var self = this;
 
+  this.cities = ko.observableArray(['São Paulo','Rio de Janeiro']);
+  this.currentCity = ko.observable('São Paulo');
+  /*
   this.movies = ko.observableArray([]);
-  
+
   initialMovies[0].forEach(function(movieItem){
     self.movies.push(new Movie(movieItem));
   });
+  */
+  this.movies = ko.computed(function(){
+    var movie = []
+    if (self.currentCity() == 'São Paulo' ){
+      initialMovies[0].forEach(function(movieItem){
+        movie.push(new Movie(movieItem));
+      });
+    }else if (self.currentCity() == 'Rio de Janeiro' ){
+      initialMovies[1].forEach(function(movieItem){
+        movie.push(new Movie(movieItem));
+      });
+    }
+    return movie;
+  },this);
+
+  this.changeCity =  function (city){
+    console.log(city)
+    self.currentCity(city);
+  }
 
   this.type = ko.computed(function(){
     var types = [];

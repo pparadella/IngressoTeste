@@ -55,17 +55,29 @@ main article{
   max-width: 1000px;
   margin: auto;
   text-align: right;
+  position: relative;
+}
+
+.local-wrap{
+  display: inline-block;
+  text-align: right;
+  width: 150px;
 }
 
 .local{
   vertical-align: middle;
-  margin-left: 50px;
+  /* margin-left: 50px; */
   font-size: 16px;
 }
 
 .local i{
   font-size: 20px;
   margin-left: 6px;
+}
+
+.local .fa-exchange-alt {
+  margin-right: 10px;
+  font-size: 16px;
 }
 
 .local a{
@@ -87,6 +99,34 @@ main article{
 
 .local a:visited i{
   color: #ff7103;
+}
+
+.changeCity {
+  display: none;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  right: 0;
+  top: 50px;
+}
+
+.changeCity a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  text-align: right;
+  margin: 0 12px;
+}
+
+.changeCity a:visited {
+    color: white;
+}
+
+.changeCity a:link {
+    color: white;
+}
+
+.changeCity a:hover {
+    color: orange;
 }
 
 .topMenu{

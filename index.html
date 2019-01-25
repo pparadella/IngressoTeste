@@ -13,12 +13,16 @@
       <div class="topMenu">
         <div class="topMargin">
             <input type="text" id="search" onkeyup="searchMovie()" placeholder="Procure por filmes.." title="Type in a name">
-
-            <span class="local">
-              <a href="#">
-                São Paulo <i class="fas fa-map-marker-alt"></i>
-              </a>
-            </span>
+            <div class="local-wrap">            
+              <span class="local">
+                <a href="javascript:void(0);" onclick="toggleChangeCity();" data-bind="with: currentCity">
+                  <!--i class="fas fa-exchange-alt"></i--><span data-bind="text: $data"></span><i class="fas fa-map-marker-alt"></i>
+                </a>
+              </span>
+            </div>
+            <div class="changeCity" data-bind="foreach: cities">
+              <a href="javascript:void(0);" data-bind="text: $data, click: $parent.changeCity"></a>
+            </div>
         </div>
 
       </div>
