@@ -37,7 +37,7 @@ section{
   justify-content: center;
 }
 
-article{
+main article{
   max-width: 175px;
   margin: 30px 10px 0px 10px;
   position: relative;
@@ -58,8 +58,8 @@ article{
 }
 
 .filter{
-  height: 45px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .filter li{
@@ -149,18 +149,18 @@ label.css-label {
 }
 
 .tags {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .generic {
-    background-color: #f90;
-    padding: 5px 8px;
-    margin: 0px 10px 8px 10px;
-    text-transform: uppercase;
-    font-size: 14px;
-    display: inline-block;
+  background-color: #f90;
+  padding: 5px 8px;
+  margin: 0px 10px 8px 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: inline-block;
 }
 
 .familia{
@@ -173,7 +173,55 @@ label.css-label {
 }
 
 .nome {
+  color: white;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.popUp {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.popUp article {
+    position: relative;
+    width: 60%;
+    padding-bottom: 30%;
+    height: 0;
+    display: flex;
+}
+
+.popUp article iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.popUp article div a {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 100;
+    background-color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 0.8%;
+    font-size: 18px;
+}
+
+.popUp article div a:link {
     color: white;
-    font-size: 1em;
-    margin-top: 10px;
+}
+
+.popUp article div a:visited {
+    color: white;
 }
