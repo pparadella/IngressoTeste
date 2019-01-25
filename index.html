@@ -12,8 +12,13 @@
     <header>
       <div class="topMenu">
         <div class="topMargin">
-            <input type="text" id="search" onkeyup="searchMovie()" placeholder="Procure por filmes.." title="Type in a name">
-            <div class="local-wrap">            
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search" onkeyup="searchMovie()" placeholder="Procure por filmes.." title="Type in a name">
+            </div>
+
+
+            <div class="local-wrap">
               <span class="local">
                 <a href="javascript:void(0);" onclick="toggleChangeCity();" data-bind="with: currentCity">
                   <!--i class="fas fa-exchange-alt"></i--><span data-bind="text: $data"></span><i class="fas fa-map-marker-alt"></i>

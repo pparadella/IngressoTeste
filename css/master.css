@@ -93,6 +93,10 @@ main article{
   color: #ff7103;
 }
 
+.local a:hover{
+  color: orange;
+}
+
 .local a:visited{
   color: white;
 }
@@ -135,11 +139,25 @@ main article{
   background-color: #000;
 }
 
-#search{
-  height: 30px;
-  width: 200px;
-  margin-top: 10px;
-  box-sizing: border-box;
+#search {
+    height: 30px;
+    width: 200px;
+    margin-top: 10px;
+    padding-left: 27px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 0;
+}
+
+.search {
+    display: inline-block;
+    position: relative;
+}
+
+.search i {
+    position: absolute;
+    top: 16px;
+    left: 6px;
 }
 
 .filter{

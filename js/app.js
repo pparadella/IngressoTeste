@@ -43,7 +43,6 @@ function toggleChangeCity (){
     elem[0].style.display = ""
   }
 }
-
 function searchMovie (){
   var input, filter, main, article, a, i, txtValue;
     input = document.getElementById("search");
@@ -93,7 +92,7 @@ var Movie = function (data){
 
   this.trailer = ko.computed(function(){
     var trailer1 = data.event.trailers;
-    console.log(trailer1)
+    //console.log(trailer1)
     if (trailer1.length == 0){
       trailer1 = data.event.siteURL;
     }else{
@@ -130,7 +129,7 @@ var ViewModel = function (){
   },this);
 
   this.changeCity =  function (city){
-    console.log(city)
+    //console.log(city)
     self.currentCity(city);
   }
 
