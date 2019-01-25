@@ -36,7 +36,7 @@
       <div class="headerMargin">
         <h1>Filmes</h1>
         <ul class="filter" data-bind="foreach: type">
-          <li><input type="checkbox" class="css-checkbox" data-bind="attr:{id: $data, name: $data}"/><label class="css-label" data-bind="text: $data,attr:{for: $data}"></label></li>
+          <li><input  type="checkbox" class="css-checkbox" data-bind="attr:{id: $data, name: $data}, checked: $parent.check"/><label class="css-label" data-bind="text: $data,attr:{for: $data}"></label></li>
         </ul>
         <ul class='menu'>
           <li class="selected"><a href="#">EM CARTAZ</a></li>

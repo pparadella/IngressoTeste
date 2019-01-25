@@ -43,6 +43,10 @@ function toggleChangeCity (){
     elem[0].style.display = ""
   }
 }
+function filter(filtro){
+  console.log(filtro);
+}
+
 function searchMovie (){
   var input, filter, main, article, a, i, txtValue;
     input = document.getElementById("search");
@@ -114,9 +118,18 @@ var ViewModel = function (){
     self.movies.push(new Movie(movieItem));
   });
   */
+
+  this.typeChecked = ko.observableArray([]);
+
+  this.check = function (data){
+    console.log(data);
+  };
+  //console.log(checked);
   this.movies = ko.computed(function(){
     var movie = []
+    console.log(self.typeChecked())
     if (self.currentCity() == 'São Paulo' ){
+
       initialMovies[0].forEach(function(movieItem){
         movie.push(new Movie(movieItem));
       });
@@ -125,13 +138,15 @@ var ViewModel = function (){
         movie.push(new Movie(movieItem));
       });
     }
+    //console.log(movie)
     return movie;
   },this);
 
   this.changeCity =  function (city){
     //console.log(city)
     self.currentCity(city);
-  }
+  };
+
 
   this.type = ko.computed(function(){
     var types = [];
@@ -152,7 +167,7 @@ var ViewModel = function (){
     }else{
       window.location.href = string;
     }
-  }
+  };
 
 }
 
