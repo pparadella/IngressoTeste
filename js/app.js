@@ -10,6 +10,7 @@ $.ajax({
   },
   success: function(data) {
     initialMovies.push(data);
+    
   },
   error: function(data) {
     console.log(data);
@@ -121,25 +122,45 @@ var ViewModel = function (){
 
   this.typeChecked = ko.observableArray([]);
 
-  this.check = function (data){
-    console.log(data);
+  this.check = function (){
+    return true;
   };
   //console.log(checked);
   this.movies = ko.computed(function(){
     var movie = []
-    console.log(self.typeChecked())
     if (self.currentCity() == 'São Paulo' ){
 
       initialMovies[0].forEach(function(movieItem){
         movie.push(new Movie(movieItem));
       });
+
     }else if (self.currentCity() == 'Rio de Janeiro' ){
       initialMovies[1].forEach(function(movieItem){
         movie.push(new Movie(movieItem));
       });
     }
+
+
     //console.log(movie)
     return movie;
+  },this);
+
+  this.currentMovies = ko.computed(function(){
+    var newMovies = []
+    if (self.typeChecked() != ''){
+      for (i in self.movies()){
+        for (j in self.typeChecked()){
+          if (self.movies()[i].type().includes(self.typeChecked()[j])){
+            newMovies.push(self.movies()[i]);
+
+            break;
+          }
+        }
+      }
+    }else{
+      newMovies = self.movies();
+    }
+    return newMovies;
   },this);
 
   this.changeCity =  function (city){
