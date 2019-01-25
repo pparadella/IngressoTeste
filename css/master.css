@@ -319,15 +319,16 @@ label.css-label {
     right: -10px;
     top: -10px;
     z-index: 100;
-    background-color: black;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 60%;
     text-decoration: none;
-    padding: 0.8%;
-    font-size: 18px;
-}
-
-.popUp article div a:link {
-    color: white;
+    padding: 0.3% 0.6%;
+    font-size: 1.22em;
+    line-height: 1.02em;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    border: 3px solid black;
 }
 
 .popUp article div a:visited {
