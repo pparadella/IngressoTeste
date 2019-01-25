@@ -19,6 +19,23 @@ function closePopUp (){
   $('.popUp').css('display','none');
   $('.popUp article iframe').attr('src','');
 }
+function searchMovie (){
+  var input, filter, main, article, a, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    main = document.getElementsByTagName('main');
+    article = main[0].getElementsByTagName("article");
+    for (i = 0; i < article.length; i++) {
+        a = article[i].getElementsByClassName('nome')[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            article[i].style.display = "block";
+        } else {
+            article[i].style.display = "none";
+        }
+    }
+}
+
 var Movie = function (data){
   this.name = ko.observable(data.event.title);
   this.image = ko.observable(data.event.images[0].url);
