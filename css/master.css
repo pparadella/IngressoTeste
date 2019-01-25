@@ -41,7 +41,7 @@ main article{
   max-width: 175px;
   margin: 30px 10px 0px 10px;
   position: relative;
-
+  cursor: pointer;
 }
 
 .headerMargin{
