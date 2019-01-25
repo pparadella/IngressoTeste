@@ -5,9 +5,13 @@
     <title></title>
     <link rel="stylesheet" href="css/master.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
   </head>
   <body>
     <header>
+      <div class="topMenu">
+
+      </div>
       <div class="headerMargin">
         <h1>Filmes</h1>
         <ul class="filter">
@@ -15,92 +19,30 @@
           <li><input type="checkbox" name="3D" id="3D" class="css-checkbox" /><label for="3D" class="css-label">3D</label></li>
         </ul>
         <ul class='menu'>
-          <li class="selected">EM CARTAZ</li>
-          <li>Teste</li>
-          <li>mais teste</li>
+          <li class="selected"><a href="#">EM CARTAZ</a></li>
         </ul>
       </div>
     </header>
 
     <main>
-      <section>
+      <section data-bind="foreach: movies">
 
-        <article>
+        <article >
           <div class="poster">
-            <img src="https://http2.mlstatic.com/poster-pequeno-imp-couche-a3-do-filme-gladiador-ver2-D_NQ_NP_13756-MLB235315104_1519-F.jpg" alt="teste">
+            <img src="" alt="teste" data-bind="attr:{src: image}">
+            <div class="tags" data-bind="foreach: tags">
+              <div data-bind="text: $data[0], attr:{class: $data[1]}"></div>
+            </div>
           </div>
-          <div class="nome">
-            blablabla blebleble
-          </div>
+          <div class="nome" data-bind="text: $data.name"></div>
+
         </article>
 
-        <article>
-          <div class="poster">
-            <img src="https://http2.mlstatic.com/poster-pequeno-imp-couche-a3-do-filme-gladiador-ver2-D_NQ_NP_13756-MLB235315104_1519-F.jpg" alt="teste">
-          </div>
-          <div class="nome">
-            blablabla blebleble
-          </div>
-        </article>
-
-        <article>
-          <div class="poster">
-            <img src="https://http2.mlstatic.com/poster-pequeno-imp-couche-a3-do-filme-gladiador-ver2-D_NQ_NP_13756-MLB235315104_1519-F.jpg" alt="teste">
-          </div>
-          <div class="nome">
-            blablabla blebleble
-          </div>
-        </article>
-
-        <article>
-          <div class="poster">
-            <img src="https://http2.mlstatic.com/poster-pequeno-imp-couche-a3-do-filme-gladiador-ver2-D_NQ_NP_13756-MLB235315104_1519-F.jpg" alt="teste">
-          </div>
-          <div class="nome">
-            blablabla blebleble
-          </div>
-        </article>
-
-        <article>
-          <div class="poster">
-            <img src="https://http2.mlstatic.com/poster-pequeno-imp-couche-a3-do-filme-gladiador-ver2-D_NQ_NP_13756-MLB235315104_1519-F.jpg" alt="teste">
-          </div>
-          <div class="nome">
-            blablabla blebleble
-          </div>
-        </article>
-
-        <article>
-          <div class="poster">
-            <img src="https://http2.mlstatic.com/poster-pequeno-imp-couche-a3-do-filme-gladiador-ver2-D_NQ_NP_13756-MLB235315104_1519-F.jpg" alt="teste">
-          </div>
-          <div class="nome">
-            blablabla blebleble
-          </div>
-        </article>
-
-        <article>
-          <div class="poster">
-            <img src="https://http2.mlstatic.com/poster-pequeno-imp-couche-a3-do-filme-gladiador-ver2-D_NQ_NP_13756-MLB235315104_1519-F.jpg" alt="teste">
-          </div>
-          <div class="nome">
-            blablabla blebleble
-          </div>
-        </article>
-
-        <article>
-          <div class="poster">
-            <img src="https://http2.mlstatic.com/poster-pequeno-imp-couche-a3-do-filme-gladiador-ver2-D_NQ_NP_13756-MLB235315104_1519-F.jpg" alt="teste">
-          </div>
-          <div class="nome">
-            blablabla blebleble
-          </div>
-        </article>
       </section>
     </main>
 
     <script src="js/knockout-3.2.0.js"></script>
-    <script type="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

@@ -40,6 +40,7 @@ section{
 article{
   max-width: 175px;
   margin: 30px 10px 0px 10px;
+  position: relative;
 
 }
 
@@ -49,6 +50,13 @@ article{
   display: flex;
   flex-wrap: wrap;
 }
+
+.topMenu{
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+}
+
 .filter{
   height: 45px;
   display: flex;
@@ -120,12 +128,52 @@ label.css-label {
   margin-right: 20px;
 }
 
+.menu a{
+  text-decoration: none;
+}
+
+.menu a:link{
+  color:#ff7103;
+}
+
+.menu a:visited{
+  color:#ff7103;
+}
+.poster{
+  position: relative;
+  display: flex;
+}
 .poster img{
   width: 100%;
   height: 100%;
 }
 
-.nome{
-  color: white;
-  text-align: center;
+.tags {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.generic {
+    background-color: #f90;
+    padding: 5px 8px;
+    margin: 0px 10px 8px 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.familia{
+  background-color: #3fc;
+  padding: 5px 8px;
+  margin: 0px 10px 8px 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.nome {
+    color: white;
+    font-size: 1em;
+    margin-top: 10px;
 }
