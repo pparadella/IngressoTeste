@@ -49,6 +49,7 @@ main article{
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  padding-left: 10px;
 }
 
 .topMargin{
@@ -56,6 +57,10 @@ main article{
   margin: auto;
   text-align: right;
   position: relative;
+}
+
+.topMargin img {
+  float: left;
 }
 
 .local-wrap{
@@ -327,4 +332,42 @@ label.css-label {
 
 .popUp article div a:visited {
     color: white;
+}
+
+
+@media only screen and (max-width: 630px) {
+  .topMenu {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      /* text-align: center; */
+      background-color: #000;
+  }
+  .topMargin {
+      max-width: 1000px;
+      /* margin: auto; */
+      text-align: right;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      justify-content: center;
+  }
+  .search {
+      display: inline-block;
+      position: relative;
+      margin: auto;
+  }
+  .local-wrap {
+      display: inline-block;
+      text-align: center;
+      width: 150px;
+      margin: auto;
+      position: relative;
+  }
+
+  .changeCity{
+    top: 34px;
+  }
+
 }
